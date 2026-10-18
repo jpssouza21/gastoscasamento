@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gastos do casamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8f6;--surf:#fff;--ink:#1d2733;--mute:#66737f;--line:#d9e2de;--acc:#2f7a66;--lv:#b84a68;--jp:#2f5fa8;--pa:#a3751a;--bad:#b3392f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10171c;--surf:#18222a;--ink:#e7edf0;--mute:#93a1ab;--line:#2a3841;--acc:#5cb89f;--lv:#e07a97;--jp:#7fa6e6;--pa:#d9a441;--bad:#ef7a6e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10171c;--surf:#18222a;--ink:#e7edf0;--mute:#93a1ab;--line:#2a3841;--acc:#5cb89f;--lv:#e07a97;--jp:#7fa6e6;--pa:#d9a441;--bad:#ef7a6e;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,sans-serif}
+main{max-width:920px;margin:0 auto;padding:24px 16px 64px}
+h1,h2{font-family:"Bricolage Grotesque",Figtree,sans-serif;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.1}
+h2{font-size:20px}
+.m{color:var(--mute);font-size:14px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:24px}
+button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:var(--surf);border-radius:8px;padding:8px 14px}
+button:hover{border-color:var(--acc)}
+button.pr{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+[data-theme="dark"] button.pr{color:#10171c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) button.pr{color:#10171c}}
+button.dz{color:var(--bad)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 16px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s b{display:block;font:700 22px "Bricolage Grotesque",Figtree,sans-serif}
+.s.lv b{color:var(--lv)}.s.jp b{color:var(--jp)}.s.pa b{color:var(--pa)}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 16px;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:16px}
+.s.bd b{color:var(--bad)}.s.ok b{color:var(--acc)}.q-J{--c:var(--acc)}
+.prog{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:16px 0 4px}
+.prog i{display:block;height:100%;background:var(--acc)}
+.tabs{display:flex;gap:4px;margin:24px 0 16px;border-bottom:1px solid var(--line)}
+.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 14px;font-weight:600;color:var(--mute)}
+.tabs button.on{color:var(--ink);border-color:var(--acc)}
+.bar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap}
+form.f{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+form.f[hidden]{display:none}
+label{display:flex;flex-direction:column;gap:4px;font-size:14px;color:var(--mute)}
+input,select,textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%;color:var(--ink)}
+.full{grid-column:1/-1}
+.acts{display:flex;gap:8px;flex-wrap:wrap}
+.g{background:var(--surf);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.g summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr repeat(3,100px) 84px;gap:12px;align-items:center;padding:14px 16px}
+.g summary::-webkit-details-marker{display:none}
+.g[open] summary{border-bottom:1px solid var(--line)}
+.gv{font-weight:600;font-size:15px}
+.gv span{display:block;font-weight:400}
+.b{font-size:13px;font-weight:600;text-align:center;border-radius:99px;padding:3px 8px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent)}
+.b.pago{--c:var(--acc)}.b.parcial{--c:var(--pa)}.b.pendente{--c:var(--mute)}.b.late{--c:var(--bad)}
+.gd{padding:14px 16px;display:grid;gap:14px}
+.pl{display:grid;gap:6px}
+.pi{display:grid;grid-template-columns:90px 1fr auto auto;gap:10px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.pi button{padding:3px 10px;font-size:13px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;background:var(--c)}
+.q-Lívia{--c:var(--lv)}.q-JP{--c:var(--jp)}.q-Pais{--c:var(--pa)}
+.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;align-items:end}
+.empty{color:var(--mute);padding:28px 0;text-align:center}
+dialog{max-width:520px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:12px;background:var(--surf);color:var(--ink)}
+dialog textarea{height:200px;font:12px/1.4 ui-monospace,monospace}
+@media (max-width:640px){
+.g summary{grid-template-columns:repeat(3,1fr)}
+.g summary .gn{grid-column:1/-1}
+.g summary .b{grid-column:1/-1;justify-self:start}
+.pi{grid-template-columns:1fr auto;}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div><h1>Gastos do casamento</h1><p class="m">Lívia e João Pedro</p></div>
+ <button onclick="bk()">Backup</button>
+</header>
+
+<div id="st"></div>
+<div class="prog"><i id="pg" style="width:0"></i></div>
+<p class="m" id="pt"></p>
+
+<nav class="tabs">
+ <button id="b-g" class="on" onclick="go('g')">Gastos</button>
+ <button id="b-r" onclick="go('r')">Ajuda dos pais</button>
+ <button id="b-s" onclick="go('s')">Guardado</button>
+</nav>
+
+<section id="vg">
+ <div class="bar">
+  <button class="pr" onclick="openF()">Novo gasto</button>
+  <select id="flt" style="width:auto" onchange="filtro=this.value;render()" aria-label="Filtrar gastos">
+   <option value="todos">Todos</option><option value="pend">Com valor pendente</option><option value="pago">Pagos por completo</option>
+  </select>
+ </div>
+ <form class="f" id="fg" hidden onsubmit="saveG(event)" oninput="prev()">
+  <label>O que é<input name="nome" required placeholder="Ex.: Buffet"></label>
+  <label>Categoria<select name="cat"><option>Espaço</option><option>Buffet</option><option>Decoração</option><option>Foto e vídeo</option><option>Música</option><option>Vestido e traje</option><option>Convites</option><option>Cerimônia</option><option>Lua de mel</option><option>Outros</option></select></label>
+  <label>Fornecedor<input name="forn" placeholder="Nome ou contato"></label>
+  <label>Valor total (R$)<input name="total" type="number" step="0.01" min="0" required></label>
+  <div id="ent" style="display:contents">
+  <label>Entrada já paga (R$)<input name="entrada" type="number" step="0.01" min="0"></label>
+  <label>Data da entrada<input name="dataent" type="date"></label>
+  <label>Quem pagou a entrada<select name="quement"><option value="Lívia">Lívia</option><option value="João Pedro">João Pedro</option><option value="Pais">Dinheiro dos pais</option></select></label>
+  </div>
+  <label>Data do próximo pagamento<input name="prox" type="date"></label>
+  <label>Vencimento do restante<input name="venc" type="date"></label>
+  <label class="full">Observação<input name="obs"></label>
+  <p class="m full" id="pv"></p>
+  <div class="acts full"><button class="pr" type="submit">Salvar gasto</button><button type="button" onclick="closeF()">Cancelar</button></div>
+ </form>
+ <div id="lg"></div>
+</section>
+
+<section id="vr" hidden>
+ <form class="f" onsubmit="addR(event)" id="fr">
+  <label>Data<input name="data" type="date" required></label>
+  <label>Quem deu<select name="de"><option>Pais da Lívia</option><option>Pais do João Pedro</option><option>Outro</option></select></label>
+  <label>Valor (R$)<input name="valor" type="number" step="0.01" min="0.01" required></label>
+  <label>Observação<input name="obs"></label>
+  <div class="acts full"><button class="pr" type="submit">Registrar valor recebido</button></div>
+ </form>
+ <p class="m">O saldo da ajuda recebida desconta os pagamentos marcados como “Dinheiro dos pais”.</p>
+ <div id="lr"></div>
+</section>
+
+<section id="vs" hidden>
+ <div id="sr" class="sum"></div>
+ <form class="f" onsubmit="addS(event)" id="fs">
+  <label>Data<input name="data" type="date" required></label>
+  <label>Quem guardou<select name="quem"><option>Lívia</option><option>João Pedro</option><option>Juntos</option></select></label>
+  <label>Valor (R$)<input name="valor" type="number" step="0.01" min="0.01" required></label>
+  <label>Observação<input name="obs" placeholder="Ex.: poupança, cofrinho"></label>
+  <div class="acts full"><button class="pr" type="submit">Registrar valor guardado</button></div>
+ </form>
+ <p class="m">Aqui entra só o dinheiro de vocês. A ajuda dos pais é somada automaticamente pela aba Ajuda dos pais.</p>
+ <div id="ls"></div>
+</section>
+</main>
+
+<dialog id="bkd">
+ <h2>Backup</h2>
+ <p class="m">Os dados ficam salvos neste navegador. Para levar para outro celular, copie o texto abaixo e cole lá, no mesmo lugar, e toque em Restaurar.</p>
+ <textarea id="bkt" aria-label="Dados do backup"></textarea>
+ <div class="acts" style="margin-top:12px"><button class="pr" onclick="restore()">Restaurar deste texto</button><button onclick="$('#bkd').close()">Fechar</button></div>
+ <p class="m" id="bkm"></p>
+</dialog>
+
+<script>
+const KEY='casamento-gastos-v1';
+let S={gastos:[],recebidos:[]};
+try{const r=localStorage.getItem(KEY);if(r){const j=JSON.parse(r);if(j&&Array.isArray(j.gastos)&&Array.isArray(j.recebidos))S=j}}catch(e){}
+if(!Array.isArray(S.guardado))S.guardado=[];
+const gsum=()=>S.guardado.reduce((a,x)=>a+x.valor,0);
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+const brl=v=>(v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const uid=()=>Math.random().toString(36).slice(2,9);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fd=d=>d?d.split('-').reverse().join('/'):'—';
+const hoje=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+const paid=g=>g.pag.reduce((a,p)=>a+p.valor,0);
+const QN={'Lívia':'Lívia','João Pedro':'João Pedro','Pais':'Dinheiro dos pais'};
+const QC={'Lívia':'q-Lívia','João Pedro':'q-JP','Pais':'q-Pais'};
+let view='g',filtro='todos',edit=null;const open=new Set();
+
+function tot(){const t={total:0,pago:0,'Lívia':0,'João Pedro':0,Pais:0,rec:0};
+ S.gastos.forEach(g=>{t.total+=g.total;g.pag.forEach(p=>{t.pago+=p.valor;t[p.quem]=(t[p.quem]||0)+p.valor})});
+ S.recebidos.forEach(r=>t.rec+=r.valor);return t}
+
+function stats(){const t=tot(),f=Math.max(t.total-t.pago,0);
+ const nx=S.gastos.filter(g=>g.total-paid(g)>0.004&&(g.prox||g.venc)).map(g=>g.prox||g.venc).sort()[0];
+ const it=[['Total dos gastos',brl(t.total),''],['Já pago',brl(t.pago),''],['Falta pagar',brl(f),''],['Próximo pagamento',fd(nx),''],
+ ['Lívia pagou',brl(t['Lívia']),'lv'],['João Pedro pagou',brl(t['João Pedro']),'jp'],['Recebido dos pais',brl(t.rec),'pa'],['Saldo da ajuda recebida',brl(t.rec-t.Pais),'pa'],['Guardado para o restante',brl(gsum()),'']];
+ $('#st').innerHTML=it.map(x=>`<div class="s ${x[2]}"><span class="m">${x[0]}</span><b>${x[1]}</b></div>`).join('');
+ const p=t.total>0?Math.min(100,t.pago/t.total*100):0;
+ $('#pg').style.width=p+'%';$('#pt').textContent=t.total>0?p.toFixed(0)+'% do total já foi pago':'Cadastre o primeiro gasto para acompanhar o progresso.'}
+
+function gHTML(g){const p=paid(g),f=Math.max(g.total-p,0),quit=f<=0.004&&g.total>0,late=f>0.004&&((g.venc&&g.venc<hoje())||(g.prox&&g.prox<hoje()));
+ const bc=late?'late':quit?'pago':p>0?'parcial':'pendente',bt=late?'Atrasado':quit?'Pago':p>0?'Parcial':'Pendente';
+ const pays=[...g.pag].sort((a,b)=>(a.data||'').localeCompare(b.data||''));
+ return `<details class="g" ${open.has(g.id)?'open':''} ontoggle="tg('${g.id}',this.open)"><summary>
+ <div class="gn"><b>${esc(g.nome)}</b><div class="m">${esc(g.cat)}${g.forn?', '+esc(g.forn):''}${f>0.004&&g.prox?'. Próximo pagamento em '+fd(g.prox):''}${f>0.004&&g.venc?'. Restante até '+fd(g.venc):''}</div></div>
+ <div class="gv"><span class="m">Total</span>${brl(g.total)}</div>
+ <div class="gv"><span class="m">Pago</span>${brl(p)}</div>
+ <div class="gv"><span class="m">Falta</span>${brl(f)}</div>
+ <span class="b ${bc}">${bt}</span></summary>
+ <div class="gd">
+ <div class="m">Próximo pagamento em <b>${fd(g.prox)}</b>. Restante vence em <b>${fd(g.venc)}</b>${g.obs?'. '+esc(g.obs):''}</div>
+ <div class="pl">${pays.length?pays.map(x=>`<div class="pi"><span class="m">${fd(x.data)}</span><span class="${QC[x.quem]||''}"><i class="dot"></i>${esc(QN[x.quem]||x.quem)}${x.obs?', '+esc(x.obs):''}</span><b>${brl(x.valor)}</b><button class="dz" onclick="del('p','${g.id}','${x.id}',this)">Excluir</button></div>`).join(''):'<div class="m">Nenhum pagamento registrado ainda.</div>'}</div>
+ <form class="pf" onsubmit="addP(event,'${g.id}')">
+  <label>Data<input name="data" type="date" required value="${hoje()}"></label>
+  <label>Valor (R$)<input name="valor" type="number" step="0.01" min="0.01" required ${f>0?`placeholder="${f.toFixed(2)}"`:''}></label>
+  <label>Quem pagou<select name="quem"><option value="Lívia">Lívia</option><option value="João Pedro">João Pedro</option><option value="Pais">Dinheiro dos pais</option></select></label>
+  <label>Observação<input name="obs" placeholder="Ex.: entrada, PIX"></label>
+  <button class="pr" type="submit">Registrar pagamento</button>
+ </form>
+ <div class="acts"><button onclick="openF('${g.id}')">Editar gasto</button><button class="dz" onclick="del('g','${g.id}',0,this)">Excluir gasto</button></div>
+ </div></details>`}
+
+function render(){stats();
+ $('#vg').hidden=view!='g';$('#vr').hidden=view!='r';$('#vs').hidden=view!='s';
+ $('#b-g').className=view=='g'?'on':'';$('#b-r').className=view=='r'?'on':'';$('#b-s').className=view=='s'?'on':'';
+ const l=S.gastos.filter(g=>{const f=g.total-paid(g)>0.004;return filtro=='pend'?f:filtro=='pago'?!f:true});
+ $('#lg').innerHTML=l.length?l.map(gHTML).join(''):`<div class="empty">${S.gastos.length?'Nenhum gasto neste filtro.':'Nenhum gasto ainda. Toque em Novo gasto para começar.'}</div>`;
+ const r=[...S.recebidos].sort((a,b)=>(b.data||'').localeCompare(a.data||''));
+ $('#lr').innerHTML=r.length?r.map(x=>`<div class="g"><div class="pi" style="padding:12px 16px"><span class="m">${fd(x.data)}</span><span class="q-Pais"><i class="dot"></i>${esc(x.de)}${x.obs?', '+esc(x.obs):''}</span><b>${brl(x.valor)}</b><button class="dz" onclick="del('r','${x.id}',0,this)">Excluir</button></div></div>`).join(''):'<div class="empty">Nenhum valor recebido ainda.</div>';renderS()}
+
+function renderS(){const t=tot(),f=Math.max(t.total-t.pago,0),g=gsum(),pais=t.rec-t.Pais,d=g+pais-f;
+ const it=[['Guardado por vocês',brl(g),''],['Ajuda dos pais disponível',brl(pais),'pa'],['Falta pagar das contas',brl(f),''],[d>=0?'Sobra depois de pagar tudo':'Ainda falta juntar',brl(Math.abs(d)),d>=0?'ok':'bd']];
+ $('#sr').innerHTML=it.map(x=>`<div class="s ${x[2]}"><span class="m">${x[0]}</span><b>${x[1]}</b></div>`).join('');
+ const l=[...S.guardado].sort((a,b)=>(b.data||'').localeCompare(a.data||''));
+ $('#ls').innerHTML=l.length?l.map(x=>`<div class="g"><div class="pi" style="padding:12px 16px"><span class="m">${fd(x.data)}</span><span class="${x.quem=='Juntos'?'q-J':QC[x.quem]||''}"><i class="dot"></i>${esc(x.quem)}${x.obs?', '+esc(x.obs):''}</span><b>${brl(x.valor)}</b><button class="dz" onclick="del('s','${x.id}',0,this)">Excluir</button></div></div>`).join(''):'<div class="empty">Nada guardado ainda. Registre o primeiro valor acima.</div>'}
+function addS(e){e.preventDefault();const f=e.target,v=parseFloat(f.valor.value);if(!(v>0))return;S.guardado.push({id:uid(),data:f.data.value,quem:f.quem.value,valor:v,obs:f.obs.value.trim()});f.valor.value='';f.obs.value='';save();render()}
+function prev(){const f=$('#fg'),t=parseFloat(f.total.value)||0,e=parseFloat(f.entrada.value)||0;$('#pv').textContent=!edit&&t>0?'Falta pagar depois da entrada: '+brl(Math.max(t-e,0))+(f.venc.value?', até '+fd(f.venc.value):''):''}
+function tg(id,o){o?open.add(id):open.delete(id)}
+function go(v){view=v;render()}
+function openF(id){const f=$('#fg');f.reset();edit=id||null;$('#ent').style.display=id?'none':'contents';
+ if(id){const g=S.gastos.find(x=>x.id==id);f.nome.value=g.nome;f.cat.value=g.cat;f.forn.value=g.forn||'';f.total.value=g.total;f.venc.value=g.venc||'';f.prox.value=g.prox||'';f.obs.value=g.obs||''}
+ prev();f.hidden=false;f.nome.focus();f.scrollIntoView({block:'center'})}
+function closeF(){$('#fg').hidden=true;edit=null}
+function saveG(e){e.preventDefault();const f=e.target;
+ const d={nome:f.nome.value.trim(),cat:f.cat.value,forn:f.forn.value.trim(),total:parseFloat(f.total.value)||0,venc:f.venc.value,prox:f.prox.value,obs:f.obs.value.trim()};
+ if(!d.nome)return;
+ if(edit)Object.assign(S.gastos.find(x=>x.id==edit),d);else{const g={id:uid(),...d,pag:[]};const en=parseFloat(f.entrada.value);if(en>0)g.pag.push({id:uid(),data:f.dataent.value||hoje(),valor:en,quem:f.quement.value,obs:'Entrada'});S.gastos.push(g);open.add(g.id)}
+ closeF();save();render()}
+function addP(e,id){e.preventDefault();const f=e.target,g=S.gastos.find(x=>x.id==id),v=parseFloat(f.valor.value);
+ if(!(v>0))return;g.pag.push({id:uid(),data:f.data.value,valor:v,quem:f.quem.value,obs:f.obs.value.trim()});open.add(id);save();render()}
+function addR(e){e.preventDefault();const f=e.target,v=parseFloat(f.valor.value);if(!(v>0))return;
+ S.recebidos.push({id:uid(),data:f.data.value,de:f.de.value,valor:v,obs:f.obs.value.trim()});f.valor.value='';f.obs.value='';save();render()}
+function del(k,a,b,btn){
+ if(!btn.dataset.c){btn.dataset.c=1;const t=btn.textContent;btn.textContent='Confirmar?';setTimeout(()=>{btn.dataset.c='';btn.textContent=t},3000);return}
+ if(k=='g')S.gastos=S.gastos.filter(x=>x.id!=a);
+ else if(k=='p'){const g=S.gastos.find(x=>x.id==a);g.pag=g.pag.filter(x=>x.id!=b)}
+ else if(k=='s')S.guardado=S.guardado.filter(x=>x.id!=a);
+ else S.recebidos=S.recebidos.filter(x=>x.id!=a);
+ save();render()}
+function bk(){$('#bkt').value=JSON.stringify(S);$('#bkm').textContent='';$('#bkd').showModal()}
+function restore(){try{const j=JSON.parse($('#bkt').value);
+ if(!j||!Array.isArray(j.gastos)||!Array.isArray(j.recebidos))throw 0;
+ if(!Array.isArray(j.guardado))j.guardado=[];S=j;save();render();$('#bkm').textContent='Dados restaurados.'}catch(e){$('#bkm').textContent='Texto inválido. Cole o backup completo e tente de novo.'}}
+$('#fr').data.value=hoje();$('#fs').data.value=hoje();
+render();
+</script>
+</body>
+</html>
